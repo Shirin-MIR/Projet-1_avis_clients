@@ -36,3 +36,4 @@ def analyse_avis(req: AnalyseRequest):
         sentiment=sentiment,
         reponse=reponse
     )
+    
