@@ -64,4 +64,3 @@ def load_reviews(limit=1000):
     df["texte_clean"] = df["text"].apply(clean_text)
     df["sentiment"] = df["label"].apply(label_sentiment)
     return df
-    
