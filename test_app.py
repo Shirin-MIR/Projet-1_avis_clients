@@ -15,4 +15,3 @@ def test_generer_reponse_mock():
     os.environ["SKIP_MODEL_DOWNLOAD"] = "true"
     result = generer_reponse("Bonjour")
     assert "[MOCK]" in result
-    
