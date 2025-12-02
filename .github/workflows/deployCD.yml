@@ -2,7 +2,7 @@ name: Deploy Python App to Azure Web App - avis-client-amazon
 
 on:
   push:
-    branches: 
+    branches:
       - main
   workflow_dispatch:
 
@@ -11,27 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Étape 1 : récupérer le code
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # Étape 2 : installer Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      # Étape 3 : installer les dépendances
       - name: Install dependencies
-        run: pip install -r require.txt
+        run: pip install -r requirements.txt
 
-      # Étape 4 : login sur Azure avec le Service Principal
-      - name: Login to Azure
+      - name: Log in to Azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENT}}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # Étape 5 : déployer sur Azure Web App
       - name: Deploy to Azure WebApp
         uses: azure/webapps-deploy@v2
         with:
