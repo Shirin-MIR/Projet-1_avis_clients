@@ -30,7 +30,7 @@ def analyse_avis(req: AnalyseRequest):
     texte_nettoye = clean_text(req.texte)
 
     # Déterminer le sentiment
-    sentiment =label_sentiment(3 if"positive word"in texte_nettoye else 1)
+    sentiment = label_sentiment(3 if "positive word" in texte_nettoye else 1)
 
     # Générer la réponse
     reponse = generer_reponse(req.texte)
