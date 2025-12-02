@@ -15,10 +15,13 @@ import nltk
 from nltk.corpus import stopwords
 from datasets import load_dataset
 
+
 # Télécharger stopwords
 nltk.download('stopwords')
 
+
 stopwords_fr = set(stopwords.words("french"))
+
 
 def clean_text(text):
     text = str(text).lower()
@@ -61,3 +64,4 @@ def load_reviews(limit=1000):
     df["texte_clean"] = df["text"].apply(clean_text)
     df["sentiment"] = df["label"].apply(label_sentiment)
     return df
+    
