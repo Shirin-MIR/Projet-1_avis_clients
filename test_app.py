@@ -9,6 +9,7 @@ Original file is located at
 
 from generate_response import generer_reponse
 
+
 def test_generer_reponse_mock():
     import os
     os.environ["SKIP_MODEL_DOWNLOAD"] = "true"
