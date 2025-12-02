@@ -9,7 +9,6 @@ Original file is located at
 
 import os
 
-
 # Détecte si on veut éviter de charger le vrai modèle (mode tests CI)
 SKIP_MODEL = os.environ.get(
     "SKIP_MODEL_DOWNLOAD",
@@ -26,6 +25,7 @@ if not SKIP_MODEL:
         AutoModelForCausalLM,
         pipeline
     )
+    import torch
 
     tokenizer = AutoTokenizer.from_pretrained(
         "Qwen/Qwen2.5-3B-Instruct"
