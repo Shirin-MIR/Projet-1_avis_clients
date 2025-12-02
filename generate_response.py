@@ -17,15 +17,13 @@ SKIP_MODEL = os.environ.get(
 
 
 if not SKIP_MODEL:
-    # ============================
-    # Chargement du vrai modèle Qwen
-    # ============================
+
+    
     from transformers import (
         AutoTokenizer,
         AutoModelForCausalLM,
         pipeline
     )
-    import torch
 
     tokenizer = AutoTokenizer.from_pretrained(
         "Qwen/Qwen2.5-3B-Instruct"
