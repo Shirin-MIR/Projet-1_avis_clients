@@ -14,12 +14,15 @@ from data_processing import clean_text, label_sentiment
 
 app = FastAPI(title="API Analyse et Réponse Client")
 
+
 class AnalyseRequest(BaseModel):
     texte: str
+
 
 class AnalyseResponse(BaseModel):
     sentiment: str
     reponse: str
+
 
 @app.post("/analyse", response_model=AnalyseResponse)
 def analyse_avis(req: AnalyseRequest):
@@ -27,7 +30,7 @@ def analyse_avis(req: AnalyseRequest):
     texte_nettoye = clean_text(req.texte)
 
     # Déterminer le sentiment
-    sentiment = label_sentiment(3 if "positive word" in texte_nettoye else 1)  # exemple ou adapter
+    sentiment =label_sentiment(3 if "positive word" in texte_nettoye else 1)
 
     # Générer la réponse
     reponse = generer_reponse(req.texte)
