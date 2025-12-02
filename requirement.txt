@@ -6,3 +6,4 @@ datasets==2.13.1
 nltk==3.8.1
 emoji==2.6.0
 pandas==2.1.0
+gunicorn
