@@ -31,5 +31,4 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'avis-client-amazon'
-          slot-name: 'epatf0aggdaeh6g8'
           package: .
